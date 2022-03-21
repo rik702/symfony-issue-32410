@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/macrich2/Documents/Symfony/Sites/issue_32410/src/Controller/TestController.php'|file_link(0) }}">src/Controller/TestController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/macrich2/Documents/Symfony/Sites/issue_32410/templates/test/index.html.twig'|file_link(0) }}">templates/test/index.html.twig</a></code></li>
+    </ul>
+</div>
+
+<table class="example-wrapper">
+  <thead>
+    <tr> 
+      <th>prop1</th>
+      <th>Children</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for parent in parents %}
+      <tr>
+        <td><a href="{{ path('parent_update', {'id': parent.id}) }}">{{parent.prop1}}</a></td>
+        <td>
+          <ul>
+            {% for child in parent.childEntities %}
+              <li>{{ child.childProp1 }}</li>
+            {% endfor %}  
+          </ul>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody> 
+</table>
+
+<div class="example-wrapper"><a href="{{ path('parent_create') }}" class="example-wrapper">Create New Parent</a></div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Parent{% endblock %}
+
+{% macro printChildRow(childForm) %}
+  <tr>
+    <td>
+      {{- form_errors(childForm.childProp1) -}}
+      {{- form_widget(childForm.childProp1) -}}
+    </td>
+    <td>
+      {{- form_errors(childForm.childProp2) -}}
+      {{- form_widget(childForm.childProp2) -}}
+    </td>
+    <td>
+      <button type="button" data-action="table-form#removeTableRowFromWithinTD">X</button>
+    </td>
+  </tr>
+{% endmacro %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+  {{ form_start(form) }}
+  <div class="example-wrapper">
+      {{ form_row(form.prop1) }}          
+      <h5>Children</h5>
+      <div {{ stimulus_controller('table-form',{'proto': _self.printChildRow(form.childEntities.vars.prototype)|e('html_attr'), 'index': form.childEntities|length }) }}>
+          <table style="">
+              <thead>
+                  <tr>
+                      <th>childProp1</th>
+                      <th>childProp2</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for childForm in form.childEntities %}
+                      {{ _self.printChildRow(childForm) }}
+                  {% endfor %}
+              </tbody>
+          </table>
+          <button type="button" data-action="table-form#addTableRowFromPrototype">Add To Children...</button>
+      </div>
+  </div>
+  <button type="submit" formnovalidate>Update Parent</button>
+  {{ form_end(form) }}
+{% endblock body %}
