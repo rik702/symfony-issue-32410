@@ -26,7 +26,7 @@ class ParentEntity
     private $prop1;
 
     /**
-     * @ORM\OneToMany(targetEntity=ChildEntity::class, mappedBy="parentEntity", cascade={"persist","remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=ChildEntity::class, mappedBy="parentEntity", cascade={"persist","remove"}, orphanRemoval=true, indexBy="id")
      * @Assert\Valid()
      */
     private $childEntities;
@@ -61,10 +61,14 @@ class ParentEntity
         return $this->childEntities;
     }
 
-    public function addChildEntity(ChildEntity $childEntity): self
+    public function addChildEntity(ChildEntity $childEntity, string $key = null): self
     {
         if (!$this->childEntities->contains($childEntity)) {
-            $this->childEntities[] = $childEntity;
+            if (is_null($key)) {
+                $this->childEntities[] = $childEntity;
+            } else {
+                $this->childEntities[$key] = $childEntity;
+            }
             $childEntity->setParentEntity($this);
         }
 
