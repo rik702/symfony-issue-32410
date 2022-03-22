@@ -61,13 +61,13 @@ class ParentEntity
         return $this->childEntities;
     }
 
-    public function addChildEntity(ChildEntity $childEntity, string $key = null): self
+    public function addChildEntity(ChildEntity $childEntity, string $collectionKeyForRecreatingSubmittedFormKeyInCaseOfValidationError = null): self
     {
         if (!$this->childEntities->contains($childEntity)) {
-            if (is_null($key)) {
+            if (is_null($collectionKeyForRecreatingSubmittedFormKeyInCaseOfValidationError)) {
                 $this->childEntities[] = $childEntity;
             } else {
-                $this->childEntities[$key] = $childEntity;
+                $this->childEntities[$collectionKeyForRecreatingSubmittedFormKeyInCaseOfValidationError] = $childEntity;
             }
             $childEntity->setParentEntity($this);
         }
