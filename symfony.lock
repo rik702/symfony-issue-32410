@@ -86,9 +86,6 @@
     "monolog/monolog": {
         "version": "2.4.0"
     },
-    "nikic/php-parser": {
-        "version": "v4.13.2"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -114,7 +111,7 @@
         ]
     },
     "symfony/asset": {
-        "version": "v5.4.3"
+        "version": "v6.0.3"
     },
     "symfony/cache": {
         "version": "v5.4.6"
@@ -138,7 +135,7 @@
         ]
     },
     "symfony/debug-bundle": {
-        "version": "5.4",
+        "version": "6.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
@@ -189,7 +186,7 @@
         ]
     },
     "symfony/form": {
-        "version": "v5.4.5"
+        "version": "v6.0.5"
     },
     "symfony/framework-bundle": {
         "version": "5.4",
@@ -216,17 +213,8 @@
     "symfony/http-kernel": {
         "version": "v5.4.6"
     },
-    "symfony/maker-bundle": {
-        "version": "1.38",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
-        }
-    },
     "symfony/monolog-bridge": {
-        "version": "v5.4.3"
+        "version": "v6.0.3"
     },
     "symfony/monolog-bundle": {
         "version": "3.7",
@@ -241,7 +229,7 @@
         ]
     },
     "symfony/options-resolver": {
-        "version": "v5.4.3"
+        "version": "v6.0.3"
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.25.0"
@@ -255,20 +243,14 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.25.0"
     },
-    "symfony/polyfill-php73": {
-        "version": "v1.25.0"
-    },
-    "symfony/polyfill-php80": {
-        "version": "v1.25.0"
-    },
     "symfony/polyfill-php81": {
         "version": "v1.25.0"
     },
     "symfony/property-access": {
-        "version": "v5.4.5"
+        "version": "v6.0.5"
     },
     "symfony/property-info": {
-        "version": "v5.4.3"
+        "version": "v6.0.3"
     },
     "symfony/proxy-manager-bridge": {
         "version": "v5.4.6"
@@ -299,13 +281,13 @@
         "version": "v5.4.3"
     },
     "symfony/translation-contracts": {
-        "version": "v2.5.0"
+        "version": "v3.0.0"
     },
     "symfony/twig-bridge": {
-        "version": "v5.4.5"
+        "version": "v6.0.5"
     },
     "symfony/twig-bundle": {
-        "version": "5.4",
+        "version": "6.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
@@ -318,7 +300,7 @@
         ]
     },
     "symfony/validator": {
-        "version": "5.4",
+        "version": "6.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
@@ -336,7 +318,7 @@
         "version": "v5.4.6"
     },
     "symfony/web-profiler-bundle": {
-        "version": "5.4",
+        "version": "6.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",

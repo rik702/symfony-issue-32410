@@ -4,7 +4,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.0.2",
+        "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-bundle": "^2.5",
@@ -13,7 +13,7 @@
         "sensio/framework-extra-bundle": "^6.2",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
-        "symfony/flex": "^2",
+        "symfony/flex": "^1.17|^2",
         "symfony/form": "6.0.*",
         "symfony/framework-bundle": "6.0.*",
         "symfony/monolog-bundle": "^3.0",
@@ -48,10 +48,7 @@
     "replace": {
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
-        "symfony/polyfill-php72": "*",
-        "symfony/polyfill-php73": "*",
-        "symfony/polyfill-php74": "*",
-        "symfony/polyfill-php80": "*"
+        "symfony/polyfill-php72": "*"
     },
     "scripts": {
         "auto-scripts": {
@@ -71,11 +68,13 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "6.0.*"
+            "require": "6.0.*",
+            "docker": false
         }
     },
     "require-dev": {
         "symfony/debug-bundle": "6.0.*",
+        "symfony/maker-bundle": "^1.38",
         "symfony/stopwatch": "6.0.*",
         "symfony/web-profiler-bundle": "6.0.*"
     }
