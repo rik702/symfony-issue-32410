@@ -567,9 +567,9 @@ class PropertyAccessor implements PropertyAccessorInterface
             $previousValue = false;
         }
 
-        foreach ($collection as $key => $item) {
+        foreach ($collection as $item) {
             if (!$previousValue || !\in_array($item, $previousValue, true)) {
-                $zval[self::VALUE]->$addMethodName($item, collectionKeyForRecreatingSubmittedFormKeyInCaseOfValidationError: $key);
+                $zval[self::VALUE]->$addMethodName($item);
             }
         }
     }
