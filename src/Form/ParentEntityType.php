@@ -3,10 +3,12 @@
 namespace App\Form;
 
 use App\Entity\ParentEntity;
+use App\Subscriber\ReindexDoctrineCollectionListener;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class ParentEntityType extends AbstractType
 {
@@ -21,6 +23,8 @@ class ParentEntityType extends AbstractType
               'by_reference' => false,
             ])
         ;
+          
+        $builder->addEventSubscriber(new ReindexDoctrineCollectionListener(['childEntities']));        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
