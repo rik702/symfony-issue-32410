@@ -1,5 +1,5 @@
 # symfony-issue-32410
-A reproducer for Symfony bug regarding Form CollecionType and validation errors not able to appear on the correct embedded form fields
+A reproducer for Symfony bug regarding Form CollectionType and validation errors not able to appear on the correct embedded form fields
 
 https://github.com/symfony/symfony/issues/32410
 
